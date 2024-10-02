@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Pemilihan2Percobaan3 {
+public class Pemilihan2Percobaan307 {
     public static void main(String[] args) {
     Scanner sc07 = new Scanner(System.in);
 
