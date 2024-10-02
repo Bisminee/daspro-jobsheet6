@@ -3,7 +3,7 @@ public class Pemilihan2Percobaan207 {
     public static void main(String[] args) {
         Scanner sc07 = new Scanner(System.in);
 
-        String member;
+        String member, qris;
         int menu, harga;
         double diskon, bayar;
 
@@ -21,6 +21,9 @@ public class Pemilihan2Percobaan207 {
 
         System.out.print("Apakah anda memiliki member (y/n) ? = ");
         member = sc07.nextLine();
+
+        System.out.print("Apakah anda ingin membayar menggunakan QRIS (y/n) ? = ");
+        qris = sc07.nextLine();
 
         System.out.println("--------------------------------------");
 
@@ -42,7 +45,12 @@ public class Pemilihan2Percobaan207 {
             }
 
             bayar = harga - (harga * diskon);
-            System.out.println("Total bayar setelah dison = " + bayar);
+            if (qris.equalsIgnoreCase("y")){
+                bayar = bayar - 1000;
+                System.out.println("Total bayar = " + bayar);
+            }else{
+                System.out.println("Total bayar setelah diskon = " + bayar);
+            }
         }else if(member.equalsIgnoreCase("n")){
             if(menu == 1){
                 harga = 14000;
@@ -58,10 +66,17 @@ public class Pemilihan2Percobaan207 {
                 return;
             }
             bayar = harga;
-            System.out.println("Total bayar setelah dison = " + bayar);
+            if (qris.equalsIgnoreCase("y")){
+                bayar = bayar - 1000;
+                System.out.println("Total bayar = " + bayar);
+            }else{
+                System.out.println("Total bayar setelah diskon = " + bayar);
+            }
         }else{
             System.out.println("Member tidak valid");
         }
+
+        
         System.out.println("--------------------------------------");
     }
 }
